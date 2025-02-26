@@ -51,7 +51,7 @@
           trap 'git reset >/dev/null' EXIT
 
           ${pkgs.nodejs}/bin/npm install --lockfile-version 2 --package-lock-only
-          ${pkgs.node2nix}/bin/node2nix -- --lock package-lock.json
+          ${pkgs.node2nix}/bin/node2nix -- --lock package-lock.json --nodejs-18
         '';
       };
 
@@ -75,5 +75,6 @@
         type = "app";
         program = "${updateDependencies}/bin/update-dependencies";
       };
+
     };
 }
