@@ -32,9 +32,8 @@
         runtimeEnv = {
           NODE_PATH = "${dependencies.nodeDependencies}/lib/node_modules";
         };
-        runtimeInputs = [ pkgs.nodejs ];
         text = ''
-          exec node ${dependencies.nodeDependencies}/lib/node_modules/@tailwindcss/cli/dist/index.mjs "$@"
+          exec ${dependencies.nodeDependencies}/bin/tailwindcss "$@"
         '';
       };
 
