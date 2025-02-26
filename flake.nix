@@ -18,7 +18,7 @@
         programs.shfmt.enable = true;
         programs.shellcheck.enable = true;
         settings.formatter.shellcheck.options = [ "-s" "sh" ];
-        settings.global.excludes = [ "LICENSE" "*.txt" ];
+        settings.global.excludes = [ "LICENSE" "*.txt" "node-env.nix" "default.nix" "node-packages.nix" ];
       };
 
       dependencies = import ./default.nix {
@@ -41,6 +41,20 @@
         '';
       };
 
+      updateDependencies = pkgs.writeShellApplication {
+        name = "update-dependencies";
+        text = ''
+          trap 'cd $(pwd)' EXIT
+          root=$(git rev-parse --show-toplevel)
+          cd "$root" || exit
+          git add -A
+          trap 'git reset >/dev/null' EXIT
+
+          ${pkgs.nodejs}/bin/npm install --lockfile-version 2 --package-lock-only
+          ${pkgs.node2nix}/bin/node2nix -- --lock package-lock.json
+        '';
+      };
+
       packages = {
         formatting = treefmtEval.config.build.check self;
         tailwindcss = tailwindcss;
@@ -56,5 +70,10 @@
       packages.x86_64-linux = gcroot;
       checks.x86_64-linux = gcroot;
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
+
+      apps.x86_64-linux.update-dependencies = {
+        type = "app";
+        program = "${updateDependencies}/bin/update-dependencies";
+      };
     };
 }
