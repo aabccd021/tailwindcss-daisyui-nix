@@ -35,11 +35,23 @@
 
       tailwindcss = pkgs.writeShellApplication {
         name = "tailwindcss";
+        runtimeEnv = {
+          NODE_PATH = "${src}/node_modules";
+          SRC = src;
+        };
+        runtimeInputs = [ pkgs.nodejs ];
         text = ''
-          export NODE_PATH=${src}/node_modules
-          exec ${pkgs.nodejs}/bin/node ${src}/node_modules/@tailwindcss/cli/dist/index.mjs "$@"
+          exec node "$SRC/node_modules/@tailwindcss/cli/dist/index.mjs" "$@"
         '';
       };
+
+      test = pkgs.runCommandLocal "test" { } ''
+        echo "@import 'tailwindcss';" > ./input.css
+        echo "@plugin 'daisyui';" >> ./input.css
+        ${tailwindcss}/bin/tailwindcss --input ./input.css --output ./output.css
+        mkdir -p "$out"
+        cp -L ./output.css "$out"
+      '';
 
       updateDependencies = pkgs.writeShellApplication {
         name = "update-dependencies";
@@ -61,6 +73,7 @@
         formatting = treefmtEval.config.build.check self;
         tailwindcss = tailwindcss;
         default = tailwindcss;
+        test = test;
       };
 
       gcroot = packages // {
