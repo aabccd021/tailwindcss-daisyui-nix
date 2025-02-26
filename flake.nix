@@ -74,7 +74,7 @@
       checks.x86_64-linux = gcroot;
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
 
-      apps.x86_64-linux.update-dependencies = {
+      apps.x86_64-linux.fix = {
         type = "app";
         program = "${updateDependencies}/bin/update-dependencies";
       };
