@@ -50,7 +50,7 @@
         echo "@plugin 'daisyui';" >> ./input.css
         ${tailwindcss}/bin/tailwindcss --input ./input.css --output ./output.css
         mkdir -p "$out"
-        cp -L ./output.css "$out"
+        cp ./output.css "$out"
       '';
 
       updateDependencies = pkgs.writeShellApplication {
