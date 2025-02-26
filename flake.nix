@@ -1,11 +1,12 @@
 {
+  nixConfig.allow-import-from-derivation = false;
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     treefmt-nix.url = "github:numtide/treefmt-nix";
-    build-node-modules.url = "github:aabccd021/build-node-modules";
   };
 
-  outputs = { self, nixpkgs, treefmt-nix, build-node-modules }:
+  outputs = { self, nixpkgs, treefmt-nix }:
     let
 
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
@@ -20,11 +21,15 @@
         settings.global.excludes = [ "LICENSE" "*.txt" ];
       };
 
-      nodeModules = build-node-modules.lib.buildNodeModules pkgs ./package.json ./package-lock.json;
+      dependencies = import ./default.nix {
+        pkgs = pkgs;
+        system = "x86_64-linux";
+        nodejs = pkgs.nodejs;
+      };
 
       src = pkgs.runCommandLocal "src" { } ''
         mkdir -p "$out/node_modules"
-        cp -Lr ${nodeModules}/* "$out/node_modules"
+        cp -Lr ${dependencies.nodeDependencies}/lib/node_modules/* "$out/node_modules"
         cp -L ${./package.json} "$out"
       '';
 

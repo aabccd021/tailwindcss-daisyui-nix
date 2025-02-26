@@ -1,4 +1,5 @@
 {
+  "name": "tailwindcss-daisyui",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.8",
     "daisyui": "^5.0.0-beta.8",
