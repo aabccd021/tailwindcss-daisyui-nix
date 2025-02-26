@@ -27,20 +27,14 @@
         nodejs = pkgs.nodejs;
       };
 
-      src = pkgs.runCommandLocal "src" { } ''
-        mkdir -p "$out/node_modules"
-        cp -Lr ${dependencies.nodeDependencies}/lib/node_modules/* "$out/node_modules"
-      '';
-
       tailwindcss = pkgs.writeShellApplication {
         name = "tailwindcss";
         runtimeEnv = {
-          NODE_PATH = "${src}/node_modules";
-          SRC = src;
+          NODE_PATH = "${dependencies.nodeDependencies}/lib/node_modules";
         };
         runtimeInputs = [ pkgs.nodejs ];
         text = ''
-          exec node "$SRC/node_modules/@tailwindcss/cli/dist/index.mjs" "$@"
+          exec node ${dependencies.nodeDependencies}/lib/node_modules/@tailwindcss/cli/dist/index.mjs "$@"
         '';
       };
 
