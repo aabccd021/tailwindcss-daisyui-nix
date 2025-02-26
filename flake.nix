@@ -30,7 +30,6 @@
       src = pkgs.runCommandLocal "src" { } ''
         mkdir -p "$out/node_modules"
         cp -Lr ${dependencies.nodeDependencies}/lib/node_modules/* "$out/node_modules"
-        cp -L ${./package.json} "$out"
       '';
 
       tailwindcss = pkgs.writeShellApplication {
