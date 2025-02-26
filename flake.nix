@@ -31,8 +31,8 @@
         name = "tailwindcss";
         runtimeEnv = {
           NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
-          PATH = "${generated.nodeDependencies}/bin";
         };
+        runtimeInputs = [ generated.nodeDependencies ];
         text = ''
           exec tailwindcss "$@"
         '';
