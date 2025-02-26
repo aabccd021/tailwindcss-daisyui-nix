@@ -18,10 +18,10 @@
         programs.shfmt.enable = true;
         programs.shellcheck.enable = true;
         settings.formatter.shellcheck.options = [ "-s" "sh" ];
-        settings.global.excludes = [ "LICENSE" "*.txt" "node-env.nix" "default.nix" "node-packages.nix" ];
+        settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
       };
 
-      dependencies = import ./default.nix {
+      dependencies = import ./generated {
         pkgs = pkgs;
         system = "x86_64-linux";
         nodejs = pkgs.nodejs;
@@ -51,7 +51,9 @@
           trap 'git reset >/dev/null' EXIT
 
           ${pkgs.nodejs}/bin/npm install --lockfile-version 2 --package-lock-only
-          ${pkgs.node2nix}/bin/node2nix -- --lock package-lock.json
+
+          cd generated
+          ${pkgs.node2nix}/bin/node2nix -- --input ../package.json --lock ../package-lock.json
         '';
       };
 

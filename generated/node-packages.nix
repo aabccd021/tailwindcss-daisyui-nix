@@ -521,7 +521,7 @@ let
   args = {
     name = "tailwindcss-daisyui";
     packageName = "tailwindcss-daisyui";
-    src = ./.;
+    src = ./..;
     dependencies = [
       sources."@parcel/watcher-2.5.1"
       sources."@parcel/watcher-android-arm64-2.5.1"
