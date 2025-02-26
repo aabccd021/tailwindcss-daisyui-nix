@@ -21,7 +21,7 @@
         settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
       };
 
-      dependencies = import ./generated {
+      generated = import ./generated {
         pkgs = pkgs;
         system = "x86_64-linux";
         nodejs = pkgs.nodejs;
@@ -30,10 +30,11 @@
       tailwindcss = pkgs.writeShellApplication {
         name = "tailwindcss";
         runtimeEnv = {
-          NODE_PATH = "${dependencies.nodeDependencies}/lib/node_modules";
+          NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
+          PATH = "${generated.nodeDependencies}/bin";
         };
         text = ''
-          exec ${dependencies.nodeDependencies}/bin/tailwindcss "$@"
+          exec tailwindcss "$@"
         '';
       };
 
