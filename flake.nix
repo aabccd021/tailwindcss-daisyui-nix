@@ -47,10 +47,14 @@
         default = tailwindcss;
       };
 
+      gcroot = packages // {
+        gcroot-all = pkgs.linkFarm "gcroot-all" packages;
+      };
+
     in
     {
-      packages.x86_64-linux = packages;
-      checks.x86_64-linux = packages;
+      packages.x86_64-linux = gcroot;
+      checks.x86_64-linux = gcroot;
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
     };
 }
