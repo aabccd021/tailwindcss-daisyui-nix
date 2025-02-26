@@ -29,9 +29,7 @@
 
       tailwindcss = pkgs.writeShellApplication {
         name = "tailwindcss";
-        runtimeEnv = {
-          NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
-        };
+        runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
         runtimeInputs = [ generated.nodeDependencies ];
         text = ''
           exec tailwindcss "$@"
