@@ -9,7 +9,28 @@
   outputs = { self, nixpkgs, treefmt-nix }:
     let
 
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      overlay = (final: prev:
+        let
+          generated = import ./generated {
+            pkgs = final;
+            system = "x86_64-linux";
+            nodejs = final.nodejs;
+          };
+        in
+        {
+
+          tailwindcss = final.writeShellApplication {
+            name = "tailwindcss";
+            runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
+            text = "exec ${generated.nodeDependencies}/bin/tailwindcss \"$@\"";
+          };
+
+        });
+
+      pkgs = import nixpkgs {
+        system = "x86_64-linux";
+        overlays = [ overlay ];
+      };
 
       treefmtEval = treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
@@ -21,22 +42,11 @@
         settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
       };
 
-      generated = import ./generated {
-        pkgs = pkgs;
-        system = "x86_64-linux";
-        nodejs = pkgs.nodejs;
-      };
-
-      tailwindcss = pkgs.writeShellApplication {
-        name = "tailwindcss";
-        runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
-        text = "exec ${generated.nodeDependencies}/bin/tailwindcss \"$@\"";
-      };
 
       test = pkgs.runCommandLocal "test" { } ''
         echo "@import 'tailwindcss';" > ./input.css
         echo "@plugin 'daisyui';" >> ./input.css
-        ${tailwindcss}/bin/tailwindcss --input ./input.css --output ./output.css
+        ${pkgs.tailwindcss}/bin/tailwindcss --input ./input.css --output ./output.css
         mkdir -p "$out"
         cp ./output.css "$out"
       '';
@@ -59,8 +69,8 @@
 
       packages = {
         formatting = treefmtEval.config.build.check self;
-        tailwindcss = tailwindcss;
-        default = tailwindcss;
+        tailwindcss = pkgs.tailwindcss;
+        default = pkgs.tailwindcss;
         test = test;
       };
 
@@ -73,6 +83,8 @@
       packages.x86_64-linux = gcroot;
       checks.x86_64-linux = gcroot;
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
+
+      overlays.default = overlay;
 
       apps.x86_64-linux.fix = {
         type = "app";
