@@ -30,6 +30,8 @@
         overlays = [ overlay ];
       };
 
+      lib = pkgs.lib;
+
       treefmtEval = treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
         programs.nixpkgs-fmt.enable = true;
@@ -85,7 +87,12 @@
 
       apps.x86_64-linux.fix = {
         type = "app";
-        program = "${updateDependencies}/bin/update-dependencies";
+        program = "${lib.getExe updateDependencies}";
+      };
+
+      apps.x86_64-linux.default = {
+        type = "app";
+        program = "${lib.getExe pkgs.tailwindcss}";
       };
 
     };
