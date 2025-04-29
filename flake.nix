@@ -71,6 +71,11 @@
         '';
       };
 
+      scripts = {
+        default = pkgs.tailwindcss;
+        updateDependencies = updateDependencies;
+      };
+
       packages = {
         formatting = treefmtEval.config.build.check self;
         tailwindcss = pkgs.tailwindcss;
@@ -78,9 +83,11 @@
         test = test;
       };
 
+
       gcroot = packages // {
         gcroot = pkgs.linkFarm "gcroot" packages;
       };
+
 
     in
     {
@@ -89,15 +96,13 @@
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
       overlays.default = overlay;
 
-      apps.x86_64-linux.fix = {
-        type = "app";
-        program = "${lib.getExe updateDependencies}";
-      };
-
-      apps.x86_64-linux.default = {
-        type = "app";
-        program = "${lib.getExe pkgs.tailwindcss}";
-      };
+      apps.x86_64-linux = builtins.mapAttrs
+        (name: script: {
+          type = "app";
+          program = pkgs.lib.getExe script;
+          meta.description = "Script ${name}";
+        })
+        scripts;
 
     };
 }
