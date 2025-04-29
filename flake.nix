@@ -42,9 +42,13 @@
         settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
       };
 
+      inputCss = pkgs.writeText "input.css" ''
+        @import 'tailwindcss';
+        @plugin 'daisyui';
+      '';
+
       test = pkgs.runCommandLocal "test" { } ''
-        echo "@import 'tailwindcss';" > ./input.css
-        echo "@plugin 'daisyui';" >> ./input.css
+        cp -L "${inputCss}" ./input.css
         ${pkgs.tailwindcss}/bin/tailwindcss --input ./input.css --output ./output.css
         mkdir -p "$out"
         cp ./output.css "$out"
