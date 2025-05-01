@@ -139,6 +139,15 @@ let
         sha512 = "gP05Qihh+cZ2FqD5fa0WJXx3KEk2YWUYv/RBKAyiOg0V4vYVDr/xlLc0sacpnVEXM45BVUR9U2hsESufYs6YTA==";
       };
     };
+    "@tailwindcss/language-server-0.14.16" = {
+      name = "_at_tailwindcss_slash_language-server";
+      packageName = "@tailwindcss/language-server";
+      version = "0.14.16";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@tailwindcss/language-server/-/language-server-0.14.16.tgz";
+        sha512 = "f8lgFSjdWLaCG7kFKwczgRQZf5iQxFUw6Uk06tkVUXrgKAT2k7h4j/6VoYL+l7u5lrvgynl6bZ+HR5Lk+0SBTQ==";
+      };
+    };
     "@tailwindcss/node-4.1.4" = {
       name = "_at_tailwindcss_slash_node";
       packageName = "@tailwindcss/node";
@@ -556,6 +565,7 @@ let
       sources."@parcel/watcher-win32-ia32-2.5.1"
       sources."@parcel/watcher-win32-x64-2.5.1"
       sources."@tailwindcss/cli-4.1.4"
+      sources."@tailwindcss/language-server-0.14.16"
       sources."@tailwindcss/node-4.1.4"
       sources."@tailwindcss/oxide-4.1.4"
       sources."@tailwindcss/oxide-android-arm64-4.1.4"

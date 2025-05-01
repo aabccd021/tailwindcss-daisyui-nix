@@ -23,6 +23,11 @@
             runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
             text = "exec ${generated.nodeDependencies}/bin/tailwindcss \"$@\"";
           };
+          tailwindcss-language-server = final.writeShellApplication {
+            name = "tailwindcss-language-server";
+            runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
+            text = "exec ${generated.nodeDependencies}/bin/tailwindcss-language-server \"$@\"";
+          };
         });
 
       pkgs = import nixpkgs {
@@ -94,14 +99,6 @@
 
       formatter.x86_64-linux = treefmtEval.config.build.wrapper;
       overlays.default = overlay;
-
-      apps.x86_64-linux = builtins.mapAttrs
-        (name: script: {
-          type = "app";
-          program = pkgs.lib.getExe script;
-          meta.description = "Script ${name}";
-        })
-        scripts;
 
     };
 }
