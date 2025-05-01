@@ -76,12 +76,8 @@
         '';
       };
 
-      scripts = {
-        default = pkgs.tailwindcss;
-        updateDependencies = updateDependencies;
-      };
-
       packages = {
+        updateDependencies = updateDependencies;
         formatting = treefmtEval.config.build.check self;
         tailwindcss = pkgs.tailwindcss;
         default = pkgs.tailwindcss;

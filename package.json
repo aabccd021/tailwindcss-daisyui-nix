@@ -1,9 +1,9 @@
 {
   "name": "tailwindcss-daisyui",
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.8",
-    "@tailwindcss/language-server": "^0.14.16",
-    "daisyui": "^5.0.0-beta.8",
-    "tailwindcss": "^4.0.8"
+    "@tailwindcss/cli": "latest",
+    "@tailwindcss/language-server": "latest",
+    "daisyui": "latest",
+    "tailwindcss": "latest"
   }
 }
