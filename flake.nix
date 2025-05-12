@@ -4,7 +4,7 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.treefmt-nix.url = "github:numtide/treefmt-nix";
 
-  outputs = { self, nixpkgs, treefmt-nix }:
+  outputs = { self, ... }@inputs:
     let
 
       overlay = (final: prev:
@@ -28,14 +28,14 @@
           };
         });
 
-      pkgs = import nixpkgs {
+      pkgs = import inputs.nixpkgs {
         system = "x86_64-linux";
         overlays = [ overlay ];
       };
 
       lib = pkgs.lib;
 
-      treefmtEval = treefmt-nix.lib.evalModule pkgs {
+      treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
         programs.nixpkgs-fmt.enable = true;
         programs.prettier.enable = true;
@@ -76,7 +76,11 @@
         '';
       };
 
-      packages = {
+      devShells.default = pkgs.mkShellNoCC {
+        buildInputs = [ pkgs.nixd ];
+      };
+
+      packages = devShells // {
         updateDependencies = updateDependencies;
         formatting = treefmtEval.config.build.check self;
         formatter = formatter;
@@ -95,6 +99,7 @@
       checks.x86_64-linux = packages;
       formatter.x86_64-linux = formatter;
       overlays.default = overlay;
+      devShells.x86_64-linux = devShells;
 
     };
 }
