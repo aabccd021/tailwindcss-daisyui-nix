@@ -1,10 +1,8 @@
 {
   nixConfig.allow-import-from-derivation = false;
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-  };
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.treefmt-nix.url = "github:numtide/treefmt-nix";
 
   outputs = { self, nixpkgs, treefmt-nix }:
     let
@@ -47,6 +45,8 @@
         settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
       };
 
+      formatter = treefmtEval.config.build.wrapper;
+
       inputCss = pkgs.writeText "input.css" ''
         @import 'tailwindcss';
         @plugin 'daisyui';
@@ -79,6 +79,7 @@
       packages = {
         updateDependencies = updateDependencies;
         formatting = treefmtEval.config.build.check self;
+        formatter = formatter;
         tailwindcss = pkgs.tailwindcss;
         default = pkgs.tailwindcss;
         test = test;
@@ -92,8 +93,7 @@
       };
 
       checks.x86_64-linux = packages;
-
-      formatter.x86_64-linux = treefmtEval.config.build.wrapper;
+      formatter.x86_64-linux = formatter;
       overlays.default = overlay;
 
     };
