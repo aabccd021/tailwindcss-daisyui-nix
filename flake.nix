@@ -4,10 +4,12 @@
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   inputs.treefmt-nix.url = "github:numtide/treefmt-nix";
 
-  outputs = { self, ... }@inputs:
+  outputs =
+    { self, ... }@inputs:
     let
 
-      overlay = (final: prev:
+      overlay = (
+        final: prev:
         let
           generated = import ./generated {
             pkgs = final;
@@ -26,7 +28,8 @@
             runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
             text = "exec ${generated.nodeDependencies}/bin/tailwindcss-language-server \"$@\"";
           };
-        });
+        }
+      );
 
       pkgs = import inputs.nixpkgs {
         system = "x86_64-linux";
@@ -37,12 +40,19 @@
 
       treefmtEval = inputs.treefmt-nix.lib.evalModule pkgs {
         projectRootFile = "flake.nix";
-        programs.nixpkgs-fmt.enable = true;
+        programs.nixfmt.enable = true;
         programs.prettier.enable = true;
         programs.shfmt.enable = true;
         programs.shellcheck.enable = true;
-        settings.formatter.shellcheck.options = [ "-s" "sh" ];
-        settings.global.excludes = [ "LICENSE" "*.txt" "generated/**" ];
+        settings.formatter.shellcheck.options = [
+          "-s"
+          "sh"
+        ];
+        settings.global.excludes = [
+          "LICENSE"
+          "*.txt"
+          "generated/**"
+        ];
       };
 
       formatter = treefmtEval.config.build.wrapper;
