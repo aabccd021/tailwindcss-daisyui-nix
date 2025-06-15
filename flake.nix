@@ -7,6 +7,17 @@
   outputs =
     { self, ... }@inputs:
     let
+      collectInputs =
+        is:
+        pkgs.linkFarm "inputs" (
+          builtins.mapAttrs (
+            name: i:
+            pkgs.linkFarm name {
+              self = i.outPath;
+              deps = collectInputs (lib.attrByPath [ "inputs" ] { } i);
+            }
+          ) is
+        );
 
       overlay = (
         final: prev:
@@ -94,6 +105,7 @@
         updateDependencies = updateDependencies;
         formatting = treefmtEval.config.build.check self;
         formatter = formatter;
+        allInputs = collectInputs inputs;
         tailwindcss = pkgs.tailwindcss;
         default = pkgs.tailwindcss;
         test = test;
