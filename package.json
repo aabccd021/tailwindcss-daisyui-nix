@@ -1,6 +1,8 @@
 {
   "name": "tailwindcss-daisyui",
   "dependencies": {
+    "@iconify/json": "latest",
+    "@iconify/tailwind4": "latest",
     "@tailwindcss/cli": "latest",
     "@tailwindcss/language-server": "latest",
     "daisyui": "latest",
