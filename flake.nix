@@ -34,7 +34,13 @@
           tailwindcss = final.writeShellApplication {
             name = "tailwindcss";
             runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
-            text = "exec ${generated.nodeDependencies}/bin/tailwindcss \"$@\"";
+            text = ''
+              # LD_LIBRARY_PATH=''${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}${final.stdenv.cc.cc.lib}/lib
+              LD_LIBRARY_PATH=''${LD_LIBRARY_PATH:-}
+              LD_LIBRARY_PATH=${final.stdenv.cc.cc.lib}:$LD_LIBRARY_PATH
+              export LD_LIBRARY_PATH
+              exec ${generated.nodeDependencies}/bin/tailwindcss "$@"
+            '';
           };
           tailwindcss-language-server = final.writeShellApplication {
             name = "tailwindcss-language-server";
