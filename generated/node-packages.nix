@@ -4,6 +4,15 @@
 
 let
   sources = {
+    "@ampproject/remapping-2.3.0" = {
+      name = "_at_ampproject_slash_remapping";
+      packageName = "@ampproject/remapping";
+      version = "2.3.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.3.0.tgz";
+        sha512 = "30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==";
+      };
+    };
     "@antfu/install-pkg-1.1.0" = {
       name = "_at_antfu_slash_install-pkg";
       packageName = "@antfu/install-pkg";
@@ -22,13 +31,13 @@ let
         sha512 = "Mex9nXf9vR6AhcXmMrlz/HVgYYZpVGJ6YlPgwl7UnaFpnshXs6EK/oa5Gpf3CzENMjkvEx2tQtntGnb7UtSTOQ==";
       };
     };
-    "@iconify/json-2.2.358" = {
+    "@iconify/json-2.2.359" = {
       name = "_at_iconify_slash_json";
       packageName = "@iconify/json";
-      version = "2.2.358";
+      version = "2.2.359";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@iconify/json/-/json-2.2.358.tgz";
-        sha512 = "01NTf7QOYG+gCb8iSWNwkuy/oPFQTgWQzrRYErw1R2IepyvbBkUTaMlLZr8OgAteBxUjNxAWSae2eGk3v9WPCw==";
+        url = "https://registry.npmjs.org/@iconify/json/-/json-2.2.359.tgz";
+        sha512 = "nOIaROD3xeLiFGvJu0YIgeu4Hqbmz6T71b0lsFv1TY6Uu6Lk/5Z8GhDByIE2/zfgxvxfv3f+5A/DkLHmMXYu8Q==";
       };
     };
     "@iconify/tailwind4-1.0.6" = {
@@ -56,6 +65,51 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@iconify/utils/-/utils-2.3.0.tgz";
         sha512 = "GmQ78prtwYW6EtzXRU1rY+KwOKfz32PD7iJh6Iyqw68GiKuoZ2A6pRtzWONz5VQJbp50mEjXh/7NkumtrAgRKA==";
+      };
+    };
+    "@isaacs/fs-minipass-4.0.1" = {
+      name = "_at_isaacs_slash_fs-minipass";
+      packageName = "@isaacs/fs-minipass";
+      version = "4.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@isaacs/fs-minipass/-/fs-minipass-4.0.1.tgz";
+        sha512 = "wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==";
+      };
+    };
+    "@jridgewell/gen-mapping-0.3.12" = {
+      name = "_at_jridgewell_slash_gen-mapping";
+      packageName = "@jridgewell/gen-mapping";
+      version = "0.3.12";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.12.tgz";
+        sha512 = "OuLGC46TjB5BbN1dH8JULVVZY4WTdkF7tV9Ys6wLL1rubZnCMstOhNHueU5bLCrnRuDhKPDM4g6sw4Bel5Gzqg==";
+      };
+    };
+    "@jridgewell/resolve-uri-3.1.2" = {
+      name = "_at_jridgewell_slash_resolve-uri";
+      packageName = "@jridgewell/resolve-uri";
+      version = "3.1.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz";
+        sha512 = "bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==";
+      };
+    };
+    "@jridgewell/sourcemap-codec-1.5.4" = {
+      name = "_at_jridgewell_slash_sourcemap-codec";
+      packageName = "@jridgewell/sourcemap-codec";
+      version = "1.5.4";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.4.tgz";
+        sha512 = "VT2+G1VQs/9oz078bLrYbecdZKs912zQlkelYpuf+SXF+QvZDYJlbx/LSx+meSAwdDFnF8FVXW92AVjjkVmgFw==";
+      };
+    };
+    "@jridgewell/trace-mapping-0.3.29" = {
+      name = "_at_jridgewell_slash_trace-mapping";
+      packageName = "@jridgewell/trace-mapping";
+      version = "0.3.29";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.29.tgz";
+        sha512 = "uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==";
       };
     };
     "@parcel/watcher-2.5.1" = {
@@ -184,148 +238,148 @@ let
         sha512 = "9lHBdJITeNR++EvSQVUcaZoWupyHfXe1jZvGZ06O/5MflPcuPLtEphScIBL+AiCWBO46tDSHzWyD0uDmmZqsgA==";
       };
     };
-    "@tailwindcss/cli-4.1.5" = {
+    "@tailwindcss/cli-4.1.11" = {
       name = "_at_tailwindcss_slash_cli";
       packageName = "@tailwindcss/cli";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/cli/-/cli-4.1.5.tgz";
-        sha512 = "Kr567rDwDjY1VUnfqh5/+DCpRf4B8lPs5O9flP4kri7n4AM2aubrIxGSh5GN8s+awUKw/U4+6kNlEnZbBNfUeg==";
+        url = "https://registry.npmjs.org/@tailwindcss/cli/-/cli-4.1.11.tgz";
+        sha512 = "7RAFOrVaXCFz5ooEG36Kbh+sMJiI2j4+Ozp71smgjnLfBRu7DTfoq8DsTvzse2/6nDeo2M3vS/FGaxfDgr3rtQ==";
       };
     };
-    "@tailwindcss/language-server-0.14.16" = {
+    "@tailwindcss/language-server-0.14.25" = {
       name = "_at_tailwindcss_slash_language-server";
       packageName = "@tailwindcss/language-server";
-      version = "0.14.16";
+      version = "0.14.25";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/language-server/-/language-server-0.14.16.tgz";
-        sha512 = "f8lgFSjdWLaCG7kFKwczgRQZf5iQxFUw6Uk06tkVUXrgKAT2k7h4j/6VoYL+l7u5lrvgynl6bZ+HR5Lk+0SBTQ==";
+        url = "https://registry.npmjs.org/@tailwindcss/language-server/-/language-server-0.14.25.tgz";
+        sha512 = "d+J8wfRfjncYJrwTtEAkv8GnuKzvmN9D8HiKsCbt0QxhOEr8vb/WNIFE1AiHZo2gx7svX5daJrc6691nidj8JQ==";
       };
     };
-    "@tailwindcss/node-4.1.5" = {
+    "@tailwindcss/node-4.1.11" = {
       name = "_at_tailwindcss_slash_node";
       packageName = "@tailwindcss/node";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/node/-/node-4.1.5.tgz";
-        sha512 = "CBhSWo0vLnWhXIvpD0qsPephiaUYfHUX3U9anwDaHZAeuGpTiB3XmsxPAN6qX7bFhipyGBqOa1QYQVVhkOUGxg==";
+        url = "https://registry.npmjs.org/@tailwindcss/node/-/node-4.1.11.tgz";
+        sha512 = "yzhzuGRmv5QyU9qLNg4GTlYI6STedBWRE7NjxP45CsFYYq9taI0zJXZBMqIC/c8fViNLhmrbpSFS57EoxUmD6Q==";
       };
     };
-    "@tailwindcss/oxide-4.1.5" = {
+    "@tailwindcss/oxide-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide";
       packageName = "@tailwindcss/oxide";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.1.5.tgz";
-        sha512 = "1n4br1znquEvyW/QuqMKQZlBen+jxAbvyduU87RS8R3tUSvByAkcaMTkJepNIrTlYhD+U25K4iiCIxE6BGdRYA==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide/-/oxide-4.1.11.tgz";
+        sha512 = "Q69XzrtAhuyfHo+5/HMgr1lAiPP/G40OMFAnws7xcFEYqcypZmdW8eGXaOUIeOl1dzPJBPENXgbjsOyhg2nkrg==";
       };
     };
-    "@tailwindcss/oxide-android-arm64-4.1.5" = {
+    "@tailwindcss/oxide-android-arm64-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-android-arm64";
       packageName = "@tailwindcss/oxide-android-arm64";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-android-arm64/-/oxide-android-arm64-4.1.5.tgz";
-        sha512 = "LVvM0GirXHED02j7hSECm8l9GGJ1RfgpWCW+DRn5TvSaxVsv28gRtoL4aWKGnXqwvI3zu1GABeDNDVZeDPOQrw==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-android-arm64/-/oxide-android-arm64-4.1.11.tgz";
+        sha512 = "3IfFuATVRUMZZprEIx9OGDjG3Ou3jG4xQzNTvjDoKmU9JdmoCohQJ83MYd0GPnQIu89YoJqvMM0G3uqLRFtetg==";
       };
     };
-    "@tailwindcss/oxide-darwin-arm64-4.1.5" = {
+    "@tailwindcss/oxide-darwin-arm64-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-darwin-arm64";
       packageName = "@tailwindcss/oxide-darwin-arm64";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-darwin-arm64/-/oxide-darwin-arm64-4.1.5.tgz";
-        sha512 = "//TfCA3pNrgnw4rRJOqavW7XUk8gsg9ddi8cwcsWXp99tzdBAZW0WXrD8wDyNbqjW316Pk2hiN/NJx/KWHl8oA==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-darwin-arm64/-/oxide-darwin-arm64-4.1.11.tgz";
+        sha512 = "ESgStEOEsyg8J5YcMb1xl8WFOXfeBmrhAwGsFxxB2CxY9evy63+AtpbDLAyRkJnxLy2WsD1qF13E97uQyP1lfQ==";
       };
     };
-    "@tailwindcss/oxide-darwin-x64-4.1.5" = {
+    "@tailwindcss/oxide-darwin-x64-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-darwin-x64";
       packageName = "@tailwindcss/oxide-darwin-x64";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-darwin-x64/-/oxide-darwin-x64-4.1.5.tgz";
-        sha512 = "XQorp3Q6/WzRd9OalgHgaqgEbjP3qjHrlSUb5k1EuS1Z9NE9+BbzSORraO+ecW432cbCN7RVGGL/lSnHxcd+7Q==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-darwin-x64/-/oxide-darwin-x64-4.1.11.tgz";
+        sha512 = "EgnK8kRchgmgzG6jE10UQNaH9Mwi2n+yw1jWmof9Vyg2lpKNX2ioe7CJdf9M5f8V9uaQxInenZkOxnTVL3fhAw==";
       };
     };
-    "@tailwindcss/oxide-freebsd-x64-4.1.5" = {
+    "@tailwindcss/oxide-freebsd-x64-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-freebsd-x64";
       packageName = "@tailwindcss/oxide-freebsd-x64";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-freebsd-x64/-/oxide-freebsd-x64-4.1.5.tgz";
-        sha512 = "bPrLWbxo8gAo97ZmrCbOdtlz/Dkuy8NK97aFbVpkJ2nJ2Jo/rsCbu0TlGx8joCuA3q6vMWTSn01JY46iwG+clg==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-freebsd-x64/-/oxide-freebsd-x64-4.1.11.tgz";
+        sha512 = "xdqKtbpHs7pQhIKmqVpxStnY1skuNh4CtbcyOHeX1YBE0hArj2romsFGb6yUmzkq/6M24nkxDqU8GYrKrz+UcA==";
       };
     };
-    "@tailwindcss/oxide-linux-arm-gnueabihf-4.1.5" = {
+    "@tailwindcss/oxide-linux-arm-gnueabihf-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-linux-arm-gnueabihf";
       packageName = "@tailwindcss/oxide-linux-arm-gnueabihf";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm-gnueabihf/-/oxide-linux-arm-gnueabihf-4.1.5.tgz";
-        sha512 = "1gtQJY9JzMAhgAfvd/ZaVOjh/Ju/nCoAsvOVJenWZfs05wb8zq+GOTnZALWGqKIYEtyNpCzvMk+ocGpxwdvaVg==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm-gnueabihf/-/oxide-linux-arm-gnueabihf-4.1.11.tgz";
+        sha512 = "ryHQK2eyDYYMwB5wZL46uoxz2zzDZsFBwfjssgB7pzytAeCCa6glsiJGjhTEddq/4OsIjsLNMAiMlHNYnkEEeg==";
       };
     };
-    "@tailwindcss/oxide-linux-arm64-gnu-4.1.5" = {
+    "@tailwindcss/oxide-linux-arm64-gnu-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-linux-arm64-gnu";
       packageName = "@tailwindcss/oxide-linux-arm64-gnu";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-gnu/-/oxide-linux-arm64-gnu-4.1.5.tgz";
-        sha512 = "dtlaHU2v7MtdxBXoqhxwsWjav7oim7Whc6S9wq/i/uUMTWAzq/gijq1InSgn2yTnh43kR+SFvcSyEF0GCNu1PQ==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-gnu/-/oxide-linux-arm64-gnu-4.1.11.tgz";
+        sha512 = "mYwqheq4BXF83j/w75ewkPJmPZIqqP1nhoghS9D57CLjsh3Nfq0m4ftTotRYtGnZd3eCztgbSPJ9QhfC91gDZQ==";
       };
     };
-    "@tailwindcss/oxide-linux-arm64-musl-4.1.5" = {
+    "@tailwindcss/oxide-linux-arm64-musl-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-linux-arm64-musl";
       packageName = "@tailwindcss/oxide-linux-arm64-musl";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-musl/-/oxide-linux-arm64-musl-4.1.5.tgz";
-        sha512 = "fg0F6nAeYcJ3CriqDT1iVrqALMwD37+sLzXs8Rjy8Z1ZHshJoYceodfyUwGJEsQoTyWbliFNRs2wMQNXtT7MVA==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-arm64-musl/-/oxide-linux-arm64-musl-4.1.11.tgz";
+        sha512 = "m/NVRFNGlEHJrNVk3O6I9ggVuNjXHIPoD6bqay/pubtYC9QIdAMpS+cswZQPBLvVvEF6GtSNONbDkZrjWZXYNQ==";
       };
     };
-    "@tailwindcss/oxide-linux-x64-gnu-4.1.5" = {
+    "@tailwindcss/oxide-linux-x64-gnu-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-linux-x64-gnu";
       packageName = "@tailwindcss/oxide-linux-x64-gnu";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.1.5.tgz";
-        sha512 = "SO+F2YEIAHa1AITwc8oPwMOWhgorPzzcbhWEb+4oLi953h45FklDmM8dPSZ7hNHpIk9p/SCZKUYn35t5fjGtHA==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-gnu/-/oxide-linux-x64-gnu-4.1.11.tgz";
+        sha512 = "YW6sblI7xukSD2TdbbaeQVDysIm/UPJtObHJHKxDEcW2exAtY47j52f8jZXkqE1krdnkhCMGqP3dbniu1Te2Fg==";
       };
     };
-    "@tailwindcss/oxide-linux-x64-musl-4.1.5" = {
+    "@tailwindcss/oxide-linux-x64-musl-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-linux-x64-musl";
       packageName = "@tailwindcss/oxide-linux-x64-musl";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.1.5.tgz";
-        sha512 = "6UbBBplywkk/R+PqqioskUeXfKcBht3KU7juTi1UszJLx0KPXUo10v2Ok04iBJIaDPkIFkUOVboXms5Yxvaz+g==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-linux-x64-musl/-/oxide-linux-x64-musl-4.1.11.tgz";
+        sha512 = "e3C/RRhGunWYNC3aSF7exsQkdXzQ/M+aYuZHKnw4U7KQwTJotnWsGOIVih0s2qQzmEzOFIJ3+xt7iq67K/p56Q==";
       };
     };
-    "@tailwindcss/oxide-wasm32-wasi-4.1.5" = {
+    "@tailwindcss/oxide-wasm32-wasi-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-wasm32-wasi";
       packageName = "@tailwindcss/oxide-wasm32-wasi";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.1.5.tgz";
-        sha512 = "hwALf2K9FHuiXTPqmo1KeOb83fTRNbe9r/Ixv9ZNQ/R24yw8Ge1HOWDDgTdtzntIaIUJG5dfXCf4g9AD4RiyhQ==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.1.11.tgz";
+        sha512 = "Xo1+/GU0JEN/C/dvcammKHzeM6NqKovG+6921MR6oadee5XPBaKOumrJCXvopJ/Qb5TH7LX/UAywbqrP4lax0g==";
       };
     };
-    "@tailwindcss/oxide-win32-arm64-msvc-4.1.5" = {
+    "@tailwindcss/oxide-win32-arm64-msvc-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-win32-arm64-msvc";
       packageName = "@tailwindcss/oxide-win32-arm64-msvc";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-win32-arm64-msvc/-/oxide-win32-arm64-msvc-4.1.5.tgz";
-        sha512 = "oDKncffWzaovJbkuR7/OTNFRJQVdiw/n8HnzaCItrNQUeQgjy7oUiYpsm9HUBgpmvmDpSSbGaCa2Evzvk3eFmA==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-win32-arm64-msvc/-/oxide-win32-arm64-msvc-4.1.11.tgz";
+        sha512 = "UgKYx5PwEKrac3GPNPf6HVMNhUIGuUh4wlDFR2jYYdkX6pL/rn73zTq/4pzUm8fOjAn5L8zDeHp9iXmUGOXZ+w==";
       };
     };
-    "@tailwindcss/oxide-win32-x64-msvc-4.1.5" = {
+    "@tailwindcss/oxide-win32-x64-msvc-4.1.11" = {
       name = "_at_tailwindcss_slash_oxide-win32-x64-msvc";
       packageName = "@tailwindcss/oxide-win32-x64-msvc";
-      version = "4.1.5";
+      version = "4.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@tailwindcss/oxide-win32-x64-msvc/-/oxide-win32-x64-msvc-4.1.5.tgz";
-        sha512 = "WiR4dtyrFdbb+ov0LK+7XsFOsG+0xs0PKZKkt41KDn9jYpO7baE3bXiudPVkTqUEwNfiglCygQHl2jklvSBi7Q==";
+        url = "https://registry.npmjs.org/@tailwindcss/oxide-win32-x64-msvc/-/oxide-win32-x64-msvc-4.1.11.tgz";
+        sha512 = "YfHoggn1j0LK7wR82TOucWc5LDCguHnoS879idHekmmiR7g9HUtMw9MI0NHatS28u/Xlkfi9w5RJWgz2Dl+5Qg==";
       };
     };
     "acorn-8.15.0" = {
@@ -346,6 +400,15 @@ let
         sha512 = "yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA==";
       };
     };
+    "chownr-3.0.0" = {
+      name = "chownr";
+      packageName = "chownr";
+      version = "3.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/chownr/-/chownr-3.0.0.tgz";
+        sha512 = "+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==";
+      };
+    };
     "confbox-0.1.8" = {
       name = "confbox";
       packageName = "confbox";
@@ -364,13 +427,13 @@ let
         sha512 = "1NB+BKqhtNipMsov4xI/NnhCKp9XG9NamYp5PVm9klAT0fsrNPjaFICsCFhNhwZJKNh7zB/3q8qXz0E9oaMNtQ==";
       };
     };
-    "daisyui-5.0.35" = {
+    "daisyui-5.0.46" = {
       name = "daisyui";
       packageName = "daisyui";
-      version = "5.0.35";
+      version = "5.0.46";
       src = fetchurl {
-        url = "https://registry.npmjs.org/daisyui/-/daisyui-5.0.35.tgz";
-        sha512 = "AWi11n/x5++mps55jcwrBf0Lmip1euWY0FYcH/05SFGmoqrU7S7/aIUWaiaeqlJ5EcmEZ/7zEY73aOxMv6hcIg==";
+        url = "https://registry.npmjs.org/daisyui/-/daisyui-5.0.46.tgz";
+        sha512 = "vMDZK1tI/bOb2Mc3Mk5WpquBG3ZqBz1YKZ0xDlvpOvey60dOS4/5Qhdowq1HndbQl7PgDLDYysxAjjUjwR7/eQ==";
       };
     };
     "debug-4.4.1" = {
@@ -400,13 +463,13 @@ let
         sha512 = "3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==";
       };
     };
-    "enhanced-resolve-5.18.1" = {
+    "enhanced-resolve-5.18.2" = {
       name = "enhanced-resolve";
       packageName = "enhanced-resolve";
-      version = "5.18.1";
+      version = "5.18.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.18.1.tgz";
-        sha512 = "ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==";
+        url = "https://registry.npmjs.org/enhanced-resolve/-/enhanced-resolve-5.18.2.tgz";
+        sha512 = "6Jw4sE1maoRJo3q8MsSIn2onJFbLTOjY9hlx4DZXmOKvLRd1Ok2kXmAGXaafL2+ijsJZ1ClYbl/pmqr9+k4iUQ==";
       };
     };
     "exsolve-1.0.7" = {
@@ -490,103 +553,103 @@ let
         sha512 = "Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==";
       };
     };
-    "lightningcss-1.29.2" = {
+    "lightningcss-1.30.1" = {
       name = "lightningcss";
       packageName = "lightningcss";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss/-/lightningcss-1.29.2.tgz";
-        sha512 = "6b6gd/RUXKaw5keVdSEtqFVdzWnU5jMxTUjA2bVcMNPLwSQ08Sv/UodBVtETLCn7k4S1Ibxwh7k68IwLZPgKaA==";
+        url = "https://registry.npmjs.org/lightningcss/-/lightningcss-1.30.1.tgz";
+        sha512 = "xi6IyHML+c9+Q3W0S4fCQJOym42pyurFiJUHEcEyHS0CeKzia4yZDEsLlqOFykxOdHpNy0NmvVO31vcSqAxJCg==";
       };
     };
-    "lightningcss-darwin-arm64-1.29.2" = {
+    "lightningcss-darwin-arm64-1.30.1" = {
       name = "lightningcss-darwin-arm64";
       packageName = "lightningcss-darwin-arm64";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.29.2.tgz";
-        sha512 = "cK/eMabSViKn/PG8U/a7aCorpeKLMlK0bQeNHmdb7qUnBkNPnL+oV5DjJUo0kqWsJUapZsM4jCfYItbqBDvlcA==";
+        url = "https://registry.npmjs.org/lightningcss-darwin-arm64/-/lightningcss-darwin-arm64-1.30.1.tgz";
+        sha512 = "c8JK7hyE65X1MHMN+Viq9n11RRC7hgin3HhYKhrMyaXflk5GVplZ60IxyoVtzILeKr+xAJwg6zK6sjTBJ0FKYQ==";
       };
     };
-    "lightningcss-darwin-x64-1.29.2" = {
+    "lightningcss-darwin-x64-1.30.1" = {
       name = "lightningcss-darwin-x64";
       packageName = "lightningcss-darwin-x64";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.29.2.tgz";
-        sha512 = "j5qYxamyQw4kDXX5hnnCKMf3mLlHvG44f24Qyi2965/Ycz829MYqjrVg2H8BidybHBp9kom4D7DR5VqCKDXS0w==";
+        url = "https://registry.npmjs.org/lightningcss-darwin-x64/-/lightningcss-darwin-x64-1.30.1.tgz";
+        sha512 = "k1EvjakfumAQoTfcXUcHQZhSpLlkAuEkdMBsI/ivWw9hL+7FtilQc0Cy3hrx0AAQrVtQAbMI7YjCgYgvn37PzA==";
       };
     };
-    "lightningcss-freebsd-x64-1.29.2" = {
+    "lightningcss-freebsd-x64-1.30.1" = {
       name = "lightningcss-freebsd-x64";
       packageName = "lightningcss-freebsd-x64";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.29.2.tgz";
-        sha512 = "wDk7M2tM78Ii8ek9YjnY8MjV5f5JN2qNVO+/0BAGZRvXKtQrBC4/cn4ssQIpKIPP44YXw6gFdpUF+Ps+RGsCwg==";
+        url = "https://registry.npmjs.org/lightningcss-freebsd-x64/-/lightningcss-freebsd-x64-1.30.1.tgz";
+        sha512 = "kmW6UGCGg2PcyUE59K5r0kWfKPAVy4SltVeut+umLCFoJ53RdCUWxcRDzO1eTaxf/7Q2H7LTquFHPL5R+Gjyig==";
       };
     };
-    "lightningcss-linux-arm-gnueabihf-1.29.2" = {
+    "lightningcss-linux-arm-gnueabihf-1.30.1" = {
       name = "lightningcss-linux-arm-gnueabihf";
       packageName = "lightningcss-linux-arm-gnueabihf";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.29.2.tgz";
-        sha512 = "IRUrOrAF2Z+KExdExe3Rz7NSTuuJ2HvCGlMKoquK5pjvo2JY4Rybr+NrKnq0U0hZnx5AnGsuFHjGnNT14w26sg==";
+        url = "https://registry.npmjs.org/lightningcss-linux-arm-gnueabihf/-/lightningcss-linux-arm-gnueabihf-1.30.1.tgz";
+        sha512 = "MjxUShl1v8pit+6D/zSPq9S9dQ2NPFSQwGvxBCYaBYLPlCWuPh9/t1MRS8iUaR8i+a6w7aps+B4N0S1TYP/R+Q==";
       };
     };
-    "lightningcss-linux-arm64-gnu-1.29.2" = {
+    "lightningcss-linux-arm64-gnu-1.30.1" = {
       name = "lightningcss-linux-arm64-gnu";
       packageName = "lightningcss-linux-arm64-gnu";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.29.2.tgz";
-        sha512 = "KKCpOlmhdjvUTX/mBuaKemp0oeDIBBLFiU5Fnqxh1/DZ4JPZi4evEH7TKoSBFOSOV3J7iEmmBaw/8dpiUvRKlQ==";
+        url = "https://registry.npmjs.org/lightningcss-linux-arm64-gnu/-/lightningcss-linux-arm64-gnu-1.30.1.tgz";
+        sha512 = "gB72maP8rmrKsnKYy8XUuXi/4OctJiuQjcuqWNlJQ6jZiWqtPvqFziskH3hnajfvKB27ynbVCucKSm2rkQp4Bw==";
       };
     };
-    "lightningcss-linux-arm64-musl-1.29.2" = {
+    "lightningcss-linux-arm64-musl-1.30.1" = {
       name = "lightningcss-linux-arm64-musl";
       packageName = "lightningcss-linux-arm64-musl";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.29.2.tgz";
-        sha512 = "Q64eM1bPlOOUgxFmoPUefqzY1yV3ctFPE6d/Vt7WzLW4rKTv7MyYNky+FWxRpLkNASTnKQUaiMJ87zNODIrrKQ==";
+        url = "https://registry.npmjs.org/lightningcss-linux-arm64-musl/-/lightningcss-linux-arm64-musl-1.30.1.tgz";
+        sha512 = "jmUQVx4331m6LIX+0wUhBbmMX7TCfjF5FoOH6SD1CttzuYlGNVpA7QnrmLxrsub43ClTINfGSYyHe2HWeLl5CQ==";
       };
     };
-    "lightningcss-linux-x64-gnu-1.29.2" = {
+    "lightningcss-linux-x64-gnu-1.30.1" = {
       name = "lightningcss-linux-x64-gnu";
       packageName = "lightningcss-linux-x64-gnu";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.29.2.tgz";
-        sha512 = "0v6idDCPG6epLXtBH/RPkHvYx74CVziHo6TMYga8O2EiQApnUPZsbR9nFNrg2cgBzk1AYqEd95TlrsL7nYABQg==";
+        url = "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.30.1.tgz";
+        sha512 = "piWx3z4wN8J8z3+O5kO74+yr6ze/dKmPnI7vLqfSqI8bccaTGY5xiSGVIJBDd5K5BHlvVLpUB3S2YCfelyJ1bw==";
       };
     };
-    "lightningcss-linux-x64-musl-1.29.2" = {
+    "lightningcss-linux-x64-musl-1.30.1" = {
       name = "lightningcss-linux-x64-musl";
       packageName = "lightningcss-linux-x64-musl";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.29.2.tgz";
-        sha512 = "rMpz2yawkgGT8RULc5S4WiZopVMOFWjiItBT7aSfDX4NQav6M44rhn5hjtkKzB+wMTRlLLqxkeYEtQ3dd9696w==";
+        url = "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.30.1.tgz";
+        sha512 = "rRomAK7eIkL+tHY0YPxbc5Dra2gXlI63HL+v1Pdi1a3sC+tJTcFrHX+E86sulgAXeI7rSzDYhPSeHHjqFhqfeQ==";
       };
     };
-    "lightningcss-win32-arm64-msvc-1.29.2" = {
+    "lightningcss-win32-arm64-msvc-1.30.1" = {
       name = "lightningcss-win32-arm64-msvc";
       packageName = "lightningcss-win32-arm64-msvc";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.29.2.tgz";
-        sha512 = "nL7zRW6evGQqYVu/bKGK+zShyz8OVzsCotFgc7judbt6wnB2KbiKKJwBE4SGoDBQ1O94RjW4asrCjQL4i8Fhbw==";
+        url = "https://registry.npmjs.org/lightningcss-win32-arm64-msvc/-/lightningcss-win32-arm64-msvc-1.30.1.tgz";
+        sha512 = "mSL4rqPi4iXq5YVqzSsJgMVFENoa4nGTT/GjO2c0Yl9OuQfPsIfncvLrEW6RbbB24WtZ3xP/2CCmI3tNkNV4oA==";
       };
     };
-    "lightningcss-win32-x64-msvc-1.29.2" = {
+    "lightningcss-win32-x64-msvc-1.30.1" = {
       name = "lightningcss-win32-x64-msvc";
       packageName = "lightningcss-win32-x64-msvc";
-      version = "1.29.2";
+      version = "1.30.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.29.2.tgz";
-        sha512 = "EdIUW3B2vLuHmv7urfzMI/h2fmlnOQBk1xlsDxkN1tCWKjNFjfLhGxYk8C8mzpSfr+A6jFFIi8fU6LbQGsRWjA==";
+        url = "https://registry.npmjs.org/lightningcss-win32-x64-msvc/-/lightningcss-win32-x64-msvc-1.30.1.tgz";
+        sha512 = "PVqXh48wh4T53F/1CCu8PIPCxLzWyCnn/9T5W1Jpmdy5h9Cwd+0YQS6/LwhHXSafuc61/xg9Lv5OrCby6a++jg==";
       };
     };
     "local-pkg-1.1.1" = {
@@ -598,6 +661,15 @@ let
         sha512 = "WunYko2W1NcdfAFpuLUoucsgULmgDBRkdxHxWQ7mK0cQqwPiy8E1enjuRBrhLtZkB5iScJ1XIPdhVEFK8aOLSg==";
       };
     };
+    "magic-string-0.30.17" = {
+      name = "magic-string";
+      packageName = "magic-string";
+      version = "0.30.17";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/magic-string/-/magic-string-0.30.17.tgz";
+        sha512 = "sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==";
+      };
+    };
     "micromatch-4.0.8" = {
       name = "micromatch";
       packageName = "micromatch";
@@ -605,6 +677,33 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz";
         sha512 = "PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==";
+      };
+    };
+    "minipass-7.1.2" = {
+      name = "minipass";
+      packageName = "minipass";
+      version = "7.1.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz";
+        sha512 = "qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==";
+      };
+    };
+    "minizlib-3.0.2" = {
+      name = "minizlib";
+      packageName = "minizlib";
+      version = "3.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/minizlib/-/minizlib-3.0.2.tgz";
+        sha512 = "oG62iEk+CYt5Xj2YqI5Xi9xWUeZhDI8jjQmC5oThVH5JGCTgIjr7ciJDzC7MBzYd//WvR1OTmP5Q38Q8ShQtVA==";
+      };
+    };
+    "mkdirp-3.0.1" = {
+      name = "mkdirp";
+      packageName = "mkdirp";
+      version = "3.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/mkdirp/-/mkdirp-3.0.1.tgz";
+        sha512 = "+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==";
       };
     };
     "mlly-1.7.4" = {
@@ -715,22 +814,40 @@ let
         sha512 = "t41VRkMYbkHyCYmOvx/6URnN80H7k4X0lLdBMGsz+maAwrJQYB1djpV6vHrQIBE0WBSGqhtEHrK9U3DWWH8v7A==";
       };
     };
-    "tailwindcss-4.1.5" = {
-      name = "tailwindcss";
-      packageName = "tailwindcss";
-      version = "4.1.5";
+    "source-map-js-1.2.1" = {
+      name = "source-map-js";
+      packageName = "source-map-js";
+      version = "1.2.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.5.tgz";
-        sha512 = "nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==";
+        url = "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz";
+        sha512 = "UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==";
       };
     };
-    "tapable-2.2.1" = {
+    "tailwindcss-4.1.11" = {
+      name = "tailwindcss";
+      packageName = "tailwindcss";
+      version = "4.1.11";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.11.tgz";
+        sha512 = "2E9TBm6MDD/xKYe+dvJZAmg3yxIEDNRc0jwlNyDg/4Fil2QcSLjFKGVff0lAf1jjeaArlG/M75Ey/EYr/OJtBA==";
+      };
+    };
+    "tapable-2.2.2" = {
       name = "tapable";
       packageName = "tapable";
-      version = "2.2.1";
+      version = "2.2.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tapable/-/tapable-2.2.1.tgz";
-        sha512 = "GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==";
+        url = "https://registry.npmjs.org/tapable/-/tapable-2.2.2.tgz";
+        sha512 = "Re10+NauLTMCudc7T5WLFLAwDhQ0JWdrMK+9B2M8zR5hRExKmsRDCBA7/aV/pNJFltmBFO5BAMlQFi/vq3nKOg==";
+      };
+    };
+    "tar-7.4.3" = {
+      name = "tar";
+      packageName = "tar";
+      version = "7.4.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/tar/-/tar-7.4.3.tgz";
+        sha512 = "5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==";
       };
     };
     "tinyexec-1.0.1" = {
@@ -760,18 +877,33 @@ let
         sha512 = "9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==";
       };
     };
+    "yallist-5.0.0" = {
+      name = "yallist";
+      packageName = "yallist";
+      version = "5.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/yallist/-/yallist-5.0.0.tgz";
+        sha512 = "YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==";
+      };
+    };
   };
   args = {
     name = "tailwindcss-daisyui";
     packageName = "tailwindcss-daisyui";
     src = ./..;
     dependencies = [
+      sources."@ampproject/remapping-2.3.0"
       sources."@antfu/install-pkg-1.1.0"
       sources."@antfu/utils-8.1.1"
-      sources."@iconify/json-2.2.358"
+      sources."@iconify/json-2.2.359"
       sources."@iconify/tailwind4-1.0.6"
       sources."@iconify/types-2.0.0"
       sources."@iconify/utils-2.3.0"
+      sources."@isaacs/fs-minipass-4.0.1"
+      sources."@jridgewell/gen-mapping-0.3.12"
+      sources."@jridgewell/resolve-uri-3.1.2"
+      sources."@jridgewell/sourcemap-codec-1.5.4"
+      sources."@jridgewell/trace-mapping-0.3.29"
       sources."@parcel/watcher-2.5.1"
       sources."@parcel/watcher-android-arm64-2.5.1"
       sources."@parcel/watcher-darwin-arm64-2.5.1"
@@ -786,29 +918,34 @@ let
       sources."@parcel/watcher-win32-arm64-2.5.1"
       sources."@parcel/watcher-win32-ia32-2.5.1"
       sources."@parcel/watcher-win32-x64-2.5.1"
-      sources."@tailwindcss/cli-4.1.5"
-      sources."@tailwindcss/language-server-0.14.16"
-      sources."@tailwindcss/node-4.1.5"
-      sources."@tailwindcss/oxide-4.1.5"
-      sources."@tailwindcss/oxide-android-arm64-4.1.5"
-      sources."@tailwindcss/oxide-darwin-arm64-4.1.5"
-      sources."@tailwindcss/oxide-darwin-x64-4.1.5"
-      sources."@tailwindcss/oxide-freebsd-x64-4.1.5"
-      sources."@tailwindcss/oxide-linux-arm-gnueabihf-4.1.5"
-      sources."@tailwindcss/oxide-linux-arm64-gnu-4.1.5"
-      sources."@tailwindcss/oxide-linux-arm64-musl-4.1.5"
-      sources."@tailwindcss/oxide-linux-x64-gnu-4.1.5"
-      sources."@tailwindcss/oxide-linux-x64-musl-4.1.5"
-      sources."@tailwindcss/oxide-wasm32-wasi-4.1.5"
-      sources."@tailwindcss/oxide-win32-arm64-msvc-4.1.5"
-      sources."@tailwindcss/oxide-win32-x64-msvc-4.1.5"
+      sources."@tailwindcss/cli-4.1.11"
+      sources."@tailwindcss/language-server-0.14.25"
+      sources."@tailwindcss/node-4.1.11"
+      (sources."@tailwindcss/oxide-4.1.11" // {
+        dependencies = [
+          sources."detect-libc-2.0.4"
+        ];
+      })
+      sources."@tailwindcss/oxide-android-arm64-4.1.11"
+      sources."@tailwindcss/oxide-darwin-arm64-4.1.11"
+      sources."@tailwindcss/oxide-darwin-x64-4.1.11"
+      sources."@tailwindcss/oxide-freebsd-x64-4.1.11"
+      sources."@tailwindcss/oxide-linux-arm-gnueabihf-4.1.11"
+      sources."@tailwindcss/oxide-linux-arm64-gnu-4.1.11"
+      sources."@tailwindcss/oxide-linux-arm64-musl-4.1.11"
+      sources."@tailwindcss/oxide-linux-x64-gnu-4.1.11"
+      sources."@tailwindcss/oxide-linux-x64-musl-4.1.11"
+      sources."@tailwindcss/oxide-wasm32-wasi-4.1.11"
+      sources."@tailwindcss/oxide-win32-arm64-msvc-4.1.11"
+      sources."@tailwindcss/oxide-win32-x64-msvc-4.1.11"
       sources."acorn-8.15.0"
       sources."braces-3.0.3"
+      sources."chownr-3.0.0"
       sources."confbox-0.2.2"
-      sources."daisyui-5.0.35"
+      sources."daisyui-5.0.46"
       sources."debug-4.4.1"
       sources."detect-libc-1.0.3"
-      sources."enhanced-resolve-5.18.1"
+      sources."enhanced-resolve-5.18.2"
       sources."exsolve-1.0.7"
       sources."fill-range-7.1.1"
       sources."globals-15.15.0"
@@ -818,23 +955,27 @@ let
       sources."is-number-7.0.0"
       sources."jiti-2.4.2"
       sources."kolorist-1.8.0"
-      (sources."lightningcss-1.29.2" // {
+      (sources."lightningcss-1.30.1" // {
         dependencies = [
           sources."detect-libc-2.0.4"
         ];
       })
-      sources."lightningcss-darwin-arm64-1.29.2"
-      sources."lightningcss-darwin-x64-1.29.2"
-      sources."lightningcss-freebsd-x64-1.29.2"
-      sources."lightningcss-linux-arm-gnueabihf-1.29.2"
-      sources."lightningcss-linux-arm64-gnu-1.29.2"
-      sources."lightningcss-linux-arm64-musl-1.29.2"
-      sources."lightningcss-linux-x64-gnu-1.29.2"
-      sources."lightningcss-linux-x64-musl-1.29.2"
-      sources."lightningcss-win32-arm64-msvc-1.29.2"
-      sources."lightningcss-win32-x64-msvc-1.29.2"
+      sources."lightningcss-darwin-arm64-1.30.1"
+      sources."lightningcss-darwin-x64-1.30.1"
+      sources."lightningcss-freebsd-x64-1.30.1"
+      sources."lightningcss-linux-arm-gnueabihf-1.30.1"
+      sources."lightningcss-linux-arm64-gnu-1.30.1"
+      sources."lightningcss-linux-arm64-musl-1.30.1"
+      sources."lightningcss-linux-x64-gnu-1.30.1"
+      sources."lightningcss-linux-x64-musl-1.30.1"
+      sources."lightningcss-win32-arm64-msvc-1.30.1"
+      sources."lightningcss-win32-x64-msvc-1.30.1"
       sources."local-pkg-1.1.1"
+      sources."magic-string-0.30.17"
       sources."micromatch-4.0.8"
+      sources."minipass-7.1.2"
+      sources."minizlib-3.0.2"
+      sources."mkdirp-3.0.1"
       (sources."mlly-1.7.4" // {
         dependencies = [
           sources."confbox-0.1.8"
@@ -855,11 +996,14 @@ let
         ];
       })
       sources."quansync-0.2.10"
-      sources."tailwindcss-4.1.5"
-      sources."tapable-2.2.1"
+      sources."source-map-js-1.2.1"
+      sources."tailwindcss-4.1.11"
+      sources."tapable-2.2.2"
+      sources."tar-7.4.3"
       sources."tinyexec-1.0.1"
       sources."to-regex-range-5.0.1"
       sources."ufo-1.6.1"
+      sources."yallist-5.0.0"
     ];
     buildInputs = globalBuildInputs;
     meta = {

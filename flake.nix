@@ -35,7 +35,6 @@
             name = "tailwindcss";
             runtimeEnv.NODE_PATH = "${generated.nodeDependencies}/lib/node_modules";
             text = ''
-              # LD_LIBRARY_PATH=''${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}${final.stdenv.cc.cc.lib}/lib
               LD_LIBRARY_PATH=''${LD_LIBRARY_PATH:-}
               LD_LIBRARY_PATH=${final.stdenv.cc.cc.lib}:$LD_LIBRARY_PATH
               export LD_LIBRARY_PATH
@@ -95,6 +94,7 @@
           git add -A
           trap 'git reset >/dev/null' EXIT
 
+          ${pkgs.nodejs}/bin/npm update
           ${pkgs.nodejs}/bin/npm install --lockfile-version 2 --package-lock-only
 
           rm -rf node_modules
